@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "main": "Main",
+    "subscriptions": "Subscriptions",
+    "favoriteVacancies": "Favorite vacancies"
+  },
+  "subscription": {
+    "archiveVacancies": "ArchiveVacancies",
+    "emptySubscriptions": "Subscription list is empty...",
+    "sourceType": "Source",
+    "subscriptions": "Subscriptions",
+    "area": "Area",
+    "specialization": "Specialization",
+    "schedule": "Schedule",
+    "searchText": "Search text"
+  },
+  "vacancy": {
+    "archived": "Archived",
+    "area": "Area",
+    "city": "City",
+    "comment": "Comment",
+    "commentSaved": "Comment saved",
+    "createdDate": "Created date",
+    "employer": "Employer",
+    "employment": "Employment",
+    "fromRange": "from",
+    "gross": "gross",
+    "mainResponsibilities": "Main responsibilities",
+    "net": "net",
+    "ratingSaved": "Rating saved",
+    "salary": "Salary",
+    "schedule": "Schedule",
+    "similarActions": "There are similar vacancies from this employer. Do you want to apply the same action to them?",
+    "toRange": "to",
+    "updatedOn": "Updated: {date}",
+    "url": "URL",
+    "visibilityChanged": "Vacancy visibility changed"
+  },
+  "components": {
+    "add": "Add",
+    "apply": "Apply",
+    "delete": "Delete",
+    "edit": "Edit",
+    "selectAll": "Select all",
+    "cancel": "Cancel",
+    "save": "Save",
+    "sortBy": "Sort by"
+  },
+  "subscriptionDialog": {
+    "title": "Do you want to change subscription?",
+    "name": "Name",
+    "rules": {
+      "mandatorySpecialization": "You should choose specialization",
+      "mandatoryName": "Name field is mandatory",
+      "nameLength256": "Name field should not contain more that 256 symbols"
+    }
+  },
+  "filterVacancies": {
+    "filters": "Filters",
+    "keyPhrase": "Key phrase",
+    "visibility": "Visibility",
+    "status": "Status",
+    "rating": "Rating",
+    "search": "Search",
+    "clear": "Clear",
+    "onlyVisible": "Only visible",
+    "onlyHidden": "Only hidden",
+    "onlyOpen": "Only open",
+    "onlyClosed": "Only closed"
+  },
+  "vacancyList": {
+    "showComments": "Show comments",
+    "sortByCreatedDate": "Created date",
+    "sortByRating": "Rating",
+    "sortByUpdatedDate": "Updated date",
+    "vacanciesTotal": "Total found vacancies: {total}"
+  }
+}
