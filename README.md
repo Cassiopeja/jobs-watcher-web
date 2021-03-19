@@ -14,6 +14,11 @@ This a frontend for backend project [JobsWatcher](https://github.com/Cassiopeja/
 npm install
 ```
 
+In main folder create file .env.local and set address for backend:
+```
+VUE_APP_BACKEND_API=http://IP_ADDRESS:PORT
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
