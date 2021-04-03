@@ -1,19 +1,52 @@
 {
+  "components": {
+    "add": "Добавить",
+    "apply": "Применить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "edit": "Изменить",
+    "save": "Сохранить",
+    "selectAll": "Выбрать все",
+    "sortBy": "Сортировать по"
+  },
+  "filterVacancies": {
+    "clear": "Сбрость",
+    "filters": "Фильтры",
+    "keyPhrase": "Ключевая фраза",
+    "onlyClosed": "Только закрытые",
+    "onlyHidden": "Только скрытые",
+    "onlyOpen": "Только открытые",
+    "onlyVisible": "Только видимые",
+    "rating": "Оценка",
+    "search": "Найти",
+    "skills": "Навыки",
+    "status": "Статус",
+    "visibility": "Видимость"
+  },
   "nav": {
+    "favoriteVacancies": "Избранные вакансии",
     "main": "Главная",
-    "subscriptions": "Подписки",
-    "favoriteVacancies": "Избранные вакансии"
+    "subscriptions": "Подписки"
   },
   "subscription": {
     "archiveVacancies": "Архивировать вакансии",
-    "emptySubscriptions": "Список подписок пуст...",
-    "sourceType": "Источник данных",
-    "subscriptions": "Подписки",
     "area": "Регион",
-    "specialization": "Специализация",
+    "emptySubscriptions": "Список подписок пуст...",
     "schedule": "График работы",
     "searchText": "Поисковый запрос",
+    "sourceType": "Источник данных",
+    "specialization": "Специализация",
+    "subscriptions": "Подписки",
     "updateVacancies": "Обновить вакасии"
+  },
+  "subscriptionDialog": {
+    "name": "Название",
+    "rules": {
+      "mandatoryName": "Название обязательно для заполнения",
+      "mandatorySpecialization": "Необходимо выбрать специализацию",
+      "nameLength256": "Название должно содержать не больше 256 символов"
+    },
+    "title": "Изменить параметры подписки?"
   },
   "vacancy": {
     "archived": "В архиве",
@@ -36,38 +69,6 @@
     "updatedOn": "Обновлена: {date}",
     "url": "URL",
     "visibilityChanged": "Видимость вакансии изменена"
-  },
-  "components": {
-    "add": "Добавить",
-    "apply": "Применить",
-    "delete": "Удалить",
-    "edit": "Изменить",
-    "selectAll": "Выбрать все",
-    "cancel": "Отмена",
-    "save": "Сохранить",
-    "sortBy": "Сортировать по"
-  },
-  "subscriptionDialog": {
-    "title": "Изменить параметры подписки?",
-    "name": "Название",
-    "rules": {
-      "mandatorySpecialization": "Необходимо выбрать специализацию",
-      "mandatoryName": "Название обязательно для заполнения",
-      "nameLength256": "Название должно содержать не больше 256 символов"
-    }
-  },
-  "filterVacancies": {
-    "filters":"Фильтры",
-    "keyPhrase": "Ключевая фраза",
-    "visibility": "Видимость",
-    "status": "Статус",
-    "rating": "Оценка",
-    "search": "Найти",
-    "clear": "Сбрость",
-    "onlyVisible": "Только видимые",
-    "onlyHidden": "Только скрытые",
-    "onlyOpen": "Только открытые",
-    "onlyClosed": "Только закрытые"
   },
   "vacancyList": {
     "showComments": "Показать комментарии",

@@ -40,6 +40,30 @@
                         :label="$t('vacancy.schedule')"
                         :loading="loading">
         </SelectMultiple>
+        <v-autocomplete
+            v-model="selectedSkills"
+            :loading="skillsLoading"
+            :items="skillItems"
+            item-text="name"
+            item-value="id"
+            :search-input.sync="searchSkills"
+            :label="$t('filterVacancies.skills')"
+            multiple
+            chips
+            small-chips
+        >
+          <template v-slot:selection="data">
+            <v-chip
+                v-bind="data.attrs"
+                :input-value="data.selected"
+                close
+                @click="data.select"
+                @click:close="removeSkill(data.item)"
+            >
+              {{ data.item.name }}
+            </v-chip>
+          </template> 
+        </v-autocomplete>
         <SelectMultiple :items="visibilityItems"
                         v-model="selectedVisibilities"
                         :label="$t('filterVacancies.visibility')">
@@ -75,6 +99,7 @@ import Employment from "@/models/Employment";
 import Schedule from "@/models/Schedule";
 import Employer from "@/models/Employer";
 import SubscriptionVacanciesFilter from "@/models/SubscriptionVacanciesFilter";
+import Skill from "@/models/Skill";
 
 export default {
   name: "FilterVacancies",
@@ -101,8 +126,23 @@ export default {
       selectedStatuses: [1],
       selectedAreas: [],
       selectedEmployers: [],
+      selectedSkills: [],
       searchKeyWord: "",
       loading: false,
+      skillsLoading: false,
+      searchSkills: null
+    }
+  },
+  watch: {
+    searchSkills(val)
+    {
+      if (val)
+      {
+        if (Skill.query().where((item) => item.name.toLowerCase() === val.toLowerCase()).count() === 0)
+        {
+          this.querySkills(val);
+        }
+      }
     }
   },
   methods: {
@@ -164,7 +204,7 @@ export default {
         areas: this.getSelectedAreas(),
         employments: this.getSelectedEmployments(),
         schedules: this.getSelectedSchedules(),
-        skills: [],
+        skills: this.selectedSkills,
         isHidden: this.getSelectedIsHidden(),
         isArchived: this.getSelectedIsArchived(),
         ratingRange: this.getSelectedRating(),
@@ -222,6 +262,19 @@ export default {
       clearFilter.id = this.id;
       await SubscriptionVacanciesFilter.insert({data: clearFilter})
       this.loadFilters();
+    },
+    async querySkills (searchValue) {
+      this.skillsLoading = true;
+      const params = {
+        searchText: searchValue,
+        subscriptionId: this.subscriptionId,
+        limit: 20
+      };
+      await Skill.reload(params);
+      this.skillsLoading = false;
+    },
+    removeSkill(item){
+      this.selectedSkills = this.selectedSkills.filter(t => t !== item.id);
     }
   },
   computed: {
@@ -238,6 +291,9 @@ export default {
     },
     employerItems() {
       return Employer.query().orderBy("name", "asc").get();
+    },
+    skillItems() {
+      return Skill.query().orderBy("name", "asc").get();
     },
     getFilter() {
       return SubscriptionVacanciesFilter.find(this.subscriptionId);

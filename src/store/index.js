@@ -15,6 +15,7 @@ import Area from "@/models/Area";
 import SubscriptionVacanciesFilter from "@/models/SubscriptionVacanciesFilter";
 import createPersistedState from 'vuex-persistedstate';
 import settings from "@/store/settings";
+import Skill from "@/models/Skill";
 
 VuexORM.use(VuexORMAxios, {axios})
 const database = new VuexORM.Database();
@@ -29,6 +30,7 @@ database.register(Employer);
 database.register(Schedule);
 database.register(Vacancy);
 database.register(SubscriptionVacanciesFilter);
+database.register(Skill);
 
 Vue.use(Vuex)
 

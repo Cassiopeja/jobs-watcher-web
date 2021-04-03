@@ -29,7 +29,7 @@ export default class SubscriptionVacanciesFilter extends Model {
             searchText: this.searchText,
             isHidden: this.isHidden,
             isArchived: this.isArchived,
-            skillId: []
+            skillId: this.skills
         }
     }
 }

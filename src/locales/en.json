@@ -1,18 +1,52 @@
 {
+  "components": {
+    "add": "Add",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "selectAll": "Select all",
+    "sortBy": "Sort by"
+  },
+  "filterVacancies": {
+    "clear": "Clear",
+    "filters": "Filters",
+    "keyPhrase": "Key phrase",
+    "onlyClosed": "Only closed",
+    "onlyHidden": "Only hidden",
+    "onlyOpen": "Only open",
+    "onlyVisible": "Only visible",
+    "rating": "Rating",
+    "search": "Search",
+    "skills": "Skills",
+    "status": "Status",
+    "visibility": "Visibility"
+  },
   "nav": {
+    "favoriteVacancies": "Favorite vacancies",
     "main": "Main",
-    "subscriptions": "Subscriptions",
-    "favoriteVacancies": "Favorite vacancies"
+    "subscriptions": "Subscriptions"
   },
   "subscription": {
-    "archiveVacancies": "ArchiveVacancies",
-    "emptySubscriptions": "Subscription list is empty...",
-    "sourceType": "Source",
-    "subscriptions": "Subscriptions",
+    "archiveVacancies": "Archive vacancies",
     "area": "Area",
-    "specialization": "Specialization",
+    "emptySubscriptions": "Subscription list is empty...",
     "schedule": "Schedule",
-    "searchText": "Search text"
+    "searchText": "Search text",
+    "sourceType": "Source",
+    "specialization": "Specialization",
+    "subscriptions": "Subscriptions",
+    "updateVacancies": "Update vacancies"
+  },
+  "subscriptionDialog": {
+    "name": "Name",
+    "rules": {
+      "mandatoryName": "Name field is mandatory",
+      "mandatorySpecialization": "You should choose specialization",
+      "nameLength256": "Name field should not contain more that 256 symbols"
+    },
+    "title": "Do you want to change subscription?"
   },
   "vacancy": {
     "archived": "Archived",
@@ -35,38 +69,6 @@
     "updatedOn": "Updated: {date}",
     "url": "URL",
     "visibilityChanged": "Vacancy visibility changed"
-  },
-  "components": {
-    "add": "Add",
-    "apply": "Apply",
-    "delete": "Delete",
-    "edit": "Edit",
-    "selectAll": "Select all",
-    "cancel": "Cancel",
-    "save": "Save",
-    "sortBy": "Sort by"
-  },
-  "subscriptionDialog": {
-    "title": "Do you want to change subscription?",
-    "name": "Name",
-    "rules": {
-      "mandatorySpecialization": "You should choose specialization",
-      "mandatoryName": "Name field is mandatory",
-      "nameLength256": "Name field should not contain more that 256 symbols"
-    }
-  },
-  "filterVacancies": {
-    "filters": "Filters",
-    "keyPhrase": "Key phrase",
-    "visibility": "Visibility",
-    "status": "Status",
-    "rating": "Rating",
-    "search": "Search",
-    "clear": "Clear",
-    "onlyVisible": "Only visible",
-    "onlyHidden": "Only hidden",
-    "onlyOpen": "Only open",
-    "onlyClosed": "Only closed"
   },
   "vacancyList": {
     "showComments": "Show comments",
