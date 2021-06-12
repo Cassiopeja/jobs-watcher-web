@@ -179,6 +179,7 @@ export default {
       this.selectedVisibilities = this.loadFromNullableBoolean(filter.isHidden);
       this.selectedStatuses = this.loadFromNullableBoolean(filter.isArchived);
       this.selectedRatingsRange = filter.ratingRange;
+      this.selectedSkills = filter.skills;
     },
     async loadAreas() {
       await Area.reload();
