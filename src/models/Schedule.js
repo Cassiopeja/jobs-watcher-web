@@ -11,7 +11,8 @@ export default class Schedule extends Model {
     }
     
     static async reload(subscriptionId) {
-        await this.api().get(`/subscriptions/${subscriptionId}/schedules`, {
+        await this.api().get(`/schedules`, {
+            params: {subscriptionId: subscriptionId},
             persistBy: 'create',
         })
     }

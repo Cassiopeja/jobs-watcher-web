@@ -11,7 +11,8 @@ export default class Employment extends Model {
     }
     
     static async reload(subscriptionId) {
-        await this.api().get(`/subscriptions/${subscriptionId}/employments`, {
+        await this.api().get(`/employments`, {
+            params: {subscriptionId: subscriptionId},
             persistBy: 'create',
         })
     }

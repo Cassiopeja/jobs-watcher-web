@@ -11,7 +11,7 @@ export default class Area extends Model {
     }
 
     static async reload() {
-        await this.api().get('/area', {
+        await this.api().get('/areas', {
             persistBy: 'insertOrUpdate'
         });
     }
