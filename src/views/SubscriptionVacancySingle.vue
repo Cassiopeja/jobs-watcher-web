@@ -13,9 +13,9 @@
       <salary-snippet :vacancy="vacancy"
                       class="green--text font-weight-bold"/>
     </v-card-text>
-    <v-card-text class="pt-0"
+    <!--v-card-text class="pt-0"
                  v-if="vacancy.responsibilities"
-                 v-html="vacancy.responsibilities"/>
+                 v-html="vacancy.responsibilities"/-->
     <Skills class="pt-0"
             :vacancy="vacancy"/>
     <v-textarea v-if="showComment"
