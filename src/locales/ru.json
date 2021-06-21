@@ -79,5 +79,10 @@
   },
   "groupedVacancyList": {
     "employersTotal": "Всего найдено компаний, разместивших вакансии: {total}"
+  },
+  "groupedVacancy": {
+    "details": "Условия",
+    "description": "Описание",
+    "comment": "Комментарий"
   }
 }

@@ -52,4 +52,14 @@ export default class SimilarVacancy extends Model {
                 persistBy: 'update'
             });
     }
+    
+    async updateComment(comment) {
+        await SimilarVacancy.api().patch(`/subscriptionvacancies/${this.id}`,
+            [
+                {"op": "replace", "path": "comment", "value": comment}
+            ],
+            {
+                persistBy: 'update'
+            });
+    }
 }

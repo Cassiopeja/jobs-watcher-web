@@ -79,5 +79,10 @@
   },
   "groupedVacancyList": {
     "employersTotal": "Total found companies that posted vacancies: {total}"
+  },
+  "groupedVacancy": {
+    "details": "Details",
+    "description": "Description",
+    "comment": "Comment"
   }
 }

@@ -28,4 +28,10 @@ export default class GroupedVacancy extends Model {
             await vacancy.updateRating(rating);
         }
     }
+    
+    async updateComment() {
+        for (const vacancy of this.similarVacancies) {
+            await vacancy.updateComment(this.comment);
+        }
+    }
 }

@@ -26,15 +26,14 @@
                     length="5"
                     size="20"
                     v-model="rating"
-                    v-on:input="onRatingChanged"
           />
         </v-card-title>
         <Skills class="pt-0"
                 :vacancy="groupedVacancy"/>
         <v-tabs>
-          <v-tab>Условия</v-tab>
-          <v-tab>Описание</v-tab>
-          <v-tab>Комментарии</v-tab>
+          <v-tab>{{$t('groupedVacancy.details')}}</v-tab>
+          <v-tab>{{$t('groupedVacancy.description')}}</v-tab>
+          <v-tab>{{$t('groupedVacancy.comment')}}</v-tab>
           <v-tab-item>
             <v-simple-table>
               <template v-slot:default>
@@ -68,8 +67,8 @@
           <v-tab-item>
             <v-textarea
                 v-model="groupedVacancy.comment"
-                class="mx-2"
-                :label="$t('vacancy.comment')"
+                class="mt-4 mb-4 mr-2"
+                :label="$t('groupedVacancy.comment')"
                 rows="2"
                 auto-grow
                 dense
@@ -101,23 +100,9 @@ export default {
     }
   },
   methods: {
-    async onHiddenChanged() {
-      // this.changingVisibility = true;
-      // await this.subscriptionVacancy.updateIsHidden();
-      // this.$notify(this.$t('vacancy.visibilityChanged'));
-      // this.similarVacancies = await this.subscriptionVacancy.getSimilar();
-      // this.changedFieldName = "isHidden";
-      // this.changingVisibility = false;
-    },
     async onCommentSave() {
-      // await this.subscriptionVacancy.updateComment();
-      // this.$notify(this.$t('vacancy.commentSaved'));
-      // this.similarVacancies = await this.subscriptionVacancy.getSimilar();
-      // this.changedFieldName = "comment";
-    },
-    async onRatingChanged() {
-      await this.groupedVacancy.updateRating();
-      this.$notify(this.$t('vacancy.ratingSaved'));
+      await this.groupedVacancy.updateComment();
+      this.$notify(this.$t('vacancy.commentSaved'));
     },
   },
   computed: {
