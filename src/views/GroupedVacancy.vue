@@ -17,7 +17,7 @@
             </template>
           </v-switch>
           <div>
-            {{groupedVacancy.title}}
+            {{ groupedVacancy.title }}
           </div>
           <v-spacer/>
           <v-rating background-color="warning lighten-1"
@@ -25,7 +25,7 @@
                     hover
                     length="5"
                     size="20"
-                    bind="5"
+                    v-model="rating"
                     v-on:input="onRatingChanged"
           />
         </v-card-title>
@@ -49,7 +49,7 @@
                   <td>
                     <salary-snippet :vacancy="vacancy" class="green--text align-baseline"/>
                   </td>
-                  <td>{{vacancy.sourceCreatedDate.substring(0, 10)}}</td>
+                  <td>{{ vacancy.sourceCreatedDate.substring(0, 10) }}</td>
                   <td>
                     <v-list-item v-if="vacancy.isArchived"
                                  dense class="pa-0 ma-0"
@@ -98,10 +98,9 @@ export default {
   data() {
     return {
       changingVisibility: false,
-      changedFieldName: null,
     }
   },
-  methods:{
+  methods: {
     async onHiddenChanged() {
       // this.changingVisibility = true;
       // await this.subscriptionVacancy.updateIsHidden();
@@ -117,27 +116,30 @@ export default {
       // this.changedFieldName = "comment";
     },
     async onRatingChanged() {
-      // await this.subscriptionVacancy.updateRating();
-      // this.$notify(this.$t('vacancy.ratingSaved'));
-      // this.similarVacancies = await this.subscriptionVacancy.getSimilar();
-      // this.changedFieldName = "rating"
+      await this.groupedVacancy.updateRating();
+      this.$notify(this.$t('vacancy.ratingSaved'));
     },
   },
-  computed:{
+  computed: {
     isHidden: {
-      get: function ()
-      {
+      get: function () {
         return this.groupedVacancy.similarVacancies.every(v => v.isHidden === true);
       },
-      set: async function (val)
-      {
-        console.log("change visibility", val)
+      set: async function (isHidden) {
         this.changingVisibility = true;
-        await this.subscriptionVacancy.updateIsHidden();
+        await this.groupedVacancy.updateIsHidden(isHidden);
         this.$notify(this.$t('vacancy.visibilityChanged'));
-        // this.similarVacancies = await this.subscriptionVacancy.getSimilar();
-        this.changedFieldName = "isHidden";
         this.changingVisibility = false;
+      }
+    },
+    rating: {
+      get: function(){
+        return Math.max(...this.groupedVacancy.similarVacancies.map(o => o.rating));
+      },
+      set: async function (rating)
+      {
+        await this.groupedVacancy.updateRating(rating);
+        this.$notify(this.$t('vacancy.ratingSaved'));
       }
     }
   }

@@ -29,7 +29,27 @@ export default class SimilarVacancy extends Model {
             schedule: this.belongsTo(Schedule, "scheduleId"),
             hashCode: this.string(),
             isHidden: this.boolean(),
-            rating:this.number() 
+            rating: this.number()
         }
+    }
+
+    async updateIsHidden(isHidden) {
+        await SimilarVacancy.api().patch(`/subscriptionvacancies/${this.id}`,
+            [
+                {"op": "replace", "path": "isHidden", "value": isHidden}
+            ],
+            {
+                persistBy: 'update'
+            });
+    }
+    
+    async updateRating(rating) {
+        await SimilarVacancy.api().patch(`/subscriptionvacancies/${this.id}`,
+            [
+                {"op": "replace", "path": "rating", "value": rating}
+            ],
+            {
+                persistBy: 'update'
+            });
     }
 }
