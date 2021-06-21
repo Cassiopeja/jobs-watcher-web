@@ -76,5 +76,8 @@
     "sortByRating": "Рейтингу",
     "sortByUpdatedDate": "Дате обновления",
     "vacanciesTotal": "Всего найдено вакансий: {total}"
+  },
+  "groupedVacancyList": {
+    "employersTotal": "Всего найдено компаний, разместивших вакансии: {total}"
   }
 }

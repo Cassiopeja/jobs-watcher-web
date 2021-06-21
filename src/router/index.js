@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import VacancySingle from "@/views/VacancySingle";
 import SubscriptionList from "@/views/SubscriptionList";
 import SubscriptionVacancyList from "@/views/SubscriptionVacancyList";
+import EmployerVacancyList from "@/views/EmployerVacancyList";
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,12 @@ const routes = [
         path: '/subscription/:id/vacancies',
         name: 'SubscriptionVacancyList',
         component: SubscriptionVacancyList,
+        props: true
+    },
+    {
+        path: '/subscription/:id/employervacancies',
+        name: 'EmployerVacancyList',
+        component: EmployerVacancyList,
         props: true
     },
 ]

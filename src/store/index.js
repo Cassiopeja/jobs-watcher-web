@@ -16,6 +16,9 @@ import SubscriptionVacanciesFilter from "@/models/SubscriptionVacanciesFilter";
 import createPersistedState from 'vuex-persistedstate';
 import settings from "@/store/settings";
 import Skill from "@/models/Skill";
+import GroupedVacancy from "@/models/GroupedVacancy";
+import EmployerVacancy from "@/models/EmployerVacancy";
+import SimilarVacancy from "@/models/SimilarVacancy";
 
 VuexORM.use(VuexORMAxios, {axios})
 const database = new VuexORM.Database();
@@ -31,6 +34,9 @@ database.register(Schedule);
 database.register(Vacancy);
 database.register(SubscriptionVacanciesFilter);
 database.register(Skill);
+database.register(GroupedVacancy);
+database.register(EmployerVacancy);
+database.register(SimilarVacancy);
 
 Vue.use(Vuex)
 

@@ -76,5 +76,8 @@
     "sortByRating": "Rating",
     "sortByUpdatedDate": "Updated date",
     "vacanciesTotal": "Total found vacancies: {total}"
+  },
+  "groupedVacancyList": {
+    "employersTotal": "Total found companies that posted vacancies: {total}"
   }
 }
