@@ -4,6 +4,11 @@
       <v-col cols="12" sm="4" md="4" xl="2">
         <filter-vacancies :subscription-id="id"
                           @filter="onFilter"/>
+        <router-link :to="{ name: 'SubscriptionVacancyList', params: { id: this.id }}" 
+                     align="center"
+        >
+            <h5 class="mt-5">{{$t('groupedVacancyList.viewVacancies')}}</h5>
+        </router-link>
       </v-col>
       <v-col cols="12" sm="8" md="8" xl="7">
         <div v-if="loading">
@@ -15,8 +20,8 @@
         <div v-else>
           <h3>{{ $t('groupedVacancyList.employersTotal', {total: totalFound}) }}</h3>
           <EmployerVacancySingle v-for="employerVacancy in employerVacancies"
-                                     :key="employerVacancy.id"
-                                     :employerVacancy="employerVacancy"
+                                 :key="employerVacancy.id"
+                                 :employerVacancy="employerVacancy"
           />
           <v-row justify="center">
             <v-col cols="8">
@@ -79,7 +84,7 @@ export default {
       if (filterParams !== null) {
         Object.assign(params, filterParams);
       }
-      
+
       await EmployerVacancy.reload(this.id, params);
     },
     async onFilter() {

@@ -4,6 +4,11 @@
       <v-col cols="12" sm="4" md="4" xl="2">
         <filter-vacancies :subscription-id="id"
                           @filter="onFilter"/>
+        <router-link :to="{ name: 'EmployerVacancyList', params: { id: this.id }}"
+                     align="center"
+        >
+          <h5 class="mt-5">{{$t('vacancyList.viewGroupedVacancies')}}</h5>
+        </router-link>
       </v-col>
       <v-col cols="12" sm="8" md="8" xl="7">
         <div v-if="loading">

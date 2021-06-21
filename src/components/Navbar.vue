@@ -87,7 +87,7 @@ export default {
       return [
         {icon: 'mdi-home', text: this.$t('nav.main'), route: '/'},
         {icon: 'mdi-newspaper-variant-multiple-outline', text: this.$t('nav.subscriptions'), route: '/subscriptions'},
-        {icon: 'mdi-folder-heart-outline', text: this.$t('nav.favoriteVacancies'), route: 'favorites'}
+        // {icon: 'mdi-folder-heart-outline', text: this.$t('nav.favoriteVacancies'), route: 'favorites'}
       ]
     }
   },

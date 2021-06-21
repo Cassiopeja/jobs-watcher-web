@@ -75,10 +75,12 @@
     "sortByCreatedDate": "Created date",
     "sortByRating": "Rating",
     "sortByUpdatedDate": "Updated date",
-    "vacanciesTotal": "Total found vacancies: {total}"
+    "vacanciesTotal": "Total found vacancies: {total}",
+    "viewGroupedVacancies": "View vacancies grouped by company"
   },
   "groupedVacancyList": {
-    "employersTotal": "Total found companies that posted vacancies: {total}"
+    "employersTotal": "Total found companies that posted vacancies: {total}",
+    "viewVacancies": "View vacancies"
   },
   "groupedVacancy": {
     "details": "Details",

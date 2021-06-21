@@ -37,6 +37,28 @@
           <v-tab-item>
             <v-simple-table>
               <template v-slot:default>
+                <thead>
+                <tr>
+                  <th class="text-left">
+                    {{$t('vacancy.city')}}
+                  </th>
+                  <th class="text-left">
+                    {{$t('vacancy.schedule')}}
+                  </th>
+                  <th class="text-left">
+                    {{$t('vacancy.employment')}}
+                  </th>
+                  <th class="text-left">
+                    {{$t('vacancy.salary')}}
+                  </th>
+                  <th class="text-left">
+                    {{$t('vacancy.createdDate')}}
+                  </th>
+                  <th class="text-left">
+                    {{$t('vacancy.archived')}}
+                  </th>
+                </tr>
+                </thead>
                 <tbody>
                 <tr
                     v-for="vacancy in groupedVacancy.similarVacancies"

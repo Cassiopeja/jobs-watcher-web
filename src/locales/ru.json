@@ -75,10 +75,12 @@
     "sortByCreatedDate": "Дате создания",
     "sortByRating": "Рейтингу",
     "sortByUpdatedDate": "Дате обновления",
-    "vacanciesTotal": "Всего найдено вакансий: {total}"
+    "vacanciesTotal": "Всего найдено вакансий: {total}",
+    "viewGroupedVacancies": "Просмотр сгруппированных вакансий"
   },
   "groupedVacancyList": {
-    "employersTotal": "Всего найдено компаний, разместивших вакансии: {total}"
+    "employersTotal": "Всего найдено компаний, разместивших вакансии: {total}",
+    "viewVacancies": "Просмотр отдельных вакансий"
   },
   "groupedVacancy": {
     "details": "Условия",
