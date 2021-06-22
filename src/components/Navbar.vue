@@ -3,11 +3,13 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="show.drawer = !show.drawer"></v-app-bar-nav-icon>
       <v-app-bar-title class="text-uppercase">
-        <span class="blue--text text--darken-4">Find</span>
-        <span class="grey--text">the</span>
-        <span class="green--text">job</span>
-        <span>you</span>
-        <span><v-icon id="toolbarsicon" class="pink--text">mdi-cards-heart</v-icon></span>
+        <div>
+          <span class="blue--text text--darken-4">Find</span>
+          <span class="grey--text">the</span>
+          <span class="green--text">job</span>
+          <span>you</span>
+          <span><v-icon id="toolbarsicon" class="pink--text">mdi-cards-heart</v-icon></span>
+        </div>
       </v-app-bar-title>
       <v-spacer></v-spacer>
       <v-menu
