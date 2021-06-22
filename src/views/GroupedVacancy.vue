@@ -89,7 +89,7 @@
           <v-tab-item>
             <v-textarea
                 v-model="groupedVacancy.comment"
-                class="mt-4 mb-4 mr-2"
+                class="ma-4"
                 :label="$t('groupedVacancy.comment')"
                 rows="2"
                 auto-grow
@@ -98,6 +98,27 @@
                 append-icon="mdi-content-save"
                 @click:append="onCommentSave"
             ></v-textarea>
+            <div class="text-right">
+              <v-btn
+                  depressed
+                  color="grey"
+                  dark
+                  @click="onSaveAsTemplate"
+                  small
+              >
+                {{$t('groupedVacancy.saveAsTemplate')}}
+              </v-btn>
+              <v-btn
+                  depressed
+                  color="grey"
+                  dark
+                  @click="onLoadFromTemplate"
+                  class="ml-2 mr-2"
+                  small
+              >
+                {{$t('groupedVacancy.loadFromTemplate')}}
+              </v-btn>
+            </div>
           </v-tab-item>
         </v-tabs>
       </v-card>
@@ -107,6 +128,7 @@
 <script>
 import SalarySnippet from "@/components/SalarySnippet"
 import Skills from "@/components/Skills"
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: 'GroupedVacancy',
@@ -122,12 +144,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setTemplate']),
     async onCommentSave() {
       await this.groupedVacancy.updateComment();
       this.$notify(this.$t('vacancy.commentSaved'));
     },
+    onSaveAsTemplate() {
+      this.setTemplate(this.groupedVacancy.comment);
+    },
+    onLoadFromTemplate() {
+      this.groupedVacancy.$update({'comment':this.template});
+    }
   },
   computed: {
+    ...mapGetters(['template']),
     isHidden: {
       get: function () {
         return this.groupedVacancy.similarVacancies.every(v => v.isHidden === true);

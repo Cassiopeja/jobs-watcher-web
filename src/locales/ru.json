@@ -85,6 +85,8 @@
   "groupedVacancy": {
     "details": "Условия",
     "description": "Описание",
-    "comment": "Комментарий"
+    "comment": "Комментарий",
+    "saveAsTemplate": "Сохранить как шаблон",
+    "loadFromTemplate": "Загрузить из шаблона"
   }
 }

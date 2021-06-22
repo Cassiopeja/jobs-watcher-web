@@ -85,6 +85,8 @@
   "groupedVacancy": {
     "details": "Details",
     "description": "Description",
-    "comment": "Comment"
+    "comment": "Comment",
+    "saveAsTemplate": "Save as template",
+    "loadFromTemplate": "Load from template"
   }
 }
